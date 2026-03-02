@@ -27,3 +27,7 @@ environments:
 
 build:
   namespace: parasol-insurance-build
+
+vault:
+  name: vault
+  namespace: vault
