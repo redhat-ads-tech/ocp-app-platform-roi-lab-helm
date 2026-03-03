@@ -29,4 +29,4 @@ spec:
         maxReplicas: 5
         minReplicas: 2
         replicas: 3
-    scannerComponent: AutoSense
+    scannerComponent: Enabled
