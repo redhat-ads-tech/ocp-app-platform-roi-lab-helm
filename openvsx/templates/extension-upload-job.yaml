@@ -21,7 +21,7 @@ spec:
       restartPolicy: OnFailure
       containers:
         - name: upload
-          image: {{ .Values.extensionUpload.image }}
+          image: registry.access.redhat.com/ubi9:latest
           command:
             - /bin/bash
             - -c
@@ -36,7 +36,7 @@ spec:
 
               # Install required tools
               echo "Installing dependencies..."
-              dnf install -y --nodocs postgresql yq > /dev/null 2>&1
+              dnf install -y --nodocs nodejs npm postgresql yq > /dev/null 2>&1
               npm install -g ovsx > /dev/null 2>&1
 
               # Wait for OpenVSX server readiness
@@ -150,7 +150,6 @@ spec:
             allowPrivilegeEscalation: false
             capabilities:
               drop: ["ALL"]
-            runAsNonRoot: true
       volumes:
         - name: extension-list
           configMap:
