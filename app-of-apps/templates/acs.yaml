@@ -15,6 +15,7 @@ spec:
       valuesObject:
         acs-instance:
           clusterName: {{ .Values.acs.clusterName }}
+          adminPassword: {{ .Values.acs.adminPassword }}
           quay:
             namespace: {{ .Values.quay.namespace }}
           vault:

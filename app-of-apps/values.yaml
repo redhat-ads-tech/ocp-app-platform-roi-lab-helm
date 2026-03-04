@@ -195,6 +195,7 @@ acs:
   name: acs
   namespace: stackrox
   clusterName: local-cluster
+  adminPassword: ""
 
 parasolRbac:
   name: parasol-rbac
