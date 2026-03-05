@@ -3,6 +3,9 @@ extensions:
   - id: continue.continue
     version: 1.2.11
   - id: redhat.vscode-yaml
+  - id: vscjava.vscode-java-debug
+  - id: vscjava.vscode-java-test
+  - id: vscjava.vscode-maven
   - id: vscode.html-language-features
   - id: redhat.vscode-quarkus
   - id: redhat.fabric8-analytics
