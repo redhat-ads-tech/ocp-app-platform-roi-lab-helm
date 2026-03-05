@@ -42,6 +42,8 @@ spec:
             periodSeconds: 10
             timeoutSeconds: 3
           env:
+            - name: JVM_ARGS
+              value: "-DSPDXParser.OnlyUseLocalLicenses=true -Xmx2048m -Dspring.mvc.async.request-timeout=-1"
             - name: OPEN_VSX_PG_SVC
               value: open-vsx-pg.{{ .Release.Namespace }}.svc.cluster.local
             - name: OPEN_VSX_PG_USER

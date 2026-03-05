@@ -12,6 +12,11 @@ data:
     server:
       port: {{ .Values.server.port }}
     spring:
+      mvc:
+        async:
+          # Tomcat's default async request timeout is 30s, which drops large
+          # VSIX downloads mid-transfer (~75MB at ~700KB/s cross-namespace)
+          request-timeout: -1
       profiles:
         include: ovsx
       autoconfigure:
