@@ -33,6 +33,17 @@ endpoints:
     requests:
       cpu: 125m
       memory: 250Mi
+backingStore:
+  numVolumes: 3
+  storageClass: ocs-external-storagecluster-ceph-rbd
+  storageSize: 50Gi
+  resources:
+    requests:
+      cpu: 250m
+      memory: 1Gi
+    limits:
+      cpu: "1"
+      memory: 4Gi
 loadBalancerSourceSubnets: {}
 labels:
   monitoring: {}
