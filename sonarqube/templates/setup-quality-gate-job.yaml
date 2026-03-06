@@ -60,11 +60,15 @@ spec:
               done
 
               # Add custom conditions if not already present
+              # Use overall metrics (not new code) so they work on first scan
               echo "Ensuring conditions are set..."
               for CONDITION in \
                 "metric=new_reliability_rating&op=GT&error=1" \
                 "metric=new_security_rating&op=GT&error=1" \
-                "metric=new_maintainability_rating&op=GT&error=1"; do
+                "metric=new_maintainability_rating&op=GT&error=1" \
+                "metric=violations&op=GT&error=0" \
+                "metric=reliability_rating&op=GT&error=1" \
+                "metric=security_rating&op=GT&error=1"; do
                 curl -sf -u "${SONAR_AUTH}" \
                   -X POST "${SONAR_URL}/api/qualitygates/create_condition" \
                   -d "gateName=Parasol&${CONDITION}" 2>/dev/null || true
