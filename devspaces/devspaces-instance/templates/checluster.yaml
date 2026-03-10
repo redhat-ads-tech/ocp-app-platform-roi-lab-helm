@@ -54,7 +54,7 @@ spec:
       template: <username>-devspaces
     secondsOfInactivityBeforeIdling: {{ .Values.devEnvironments.secondsOfInactivityBeforeIdling }}
     storage:
-      pvcStrategy: per-user
+      pvcStrategy: per-workspace
   gitServices:
     gitlab:
       - secretName: gitlab-oauth-config
