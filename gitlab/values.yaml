@@ -74,27 +74,12 @@ gitlab:
         - id: dev2
         - id: pe1
         - id: pe2
-    - name: global
-      repo:
-        - name: global-techdocs
-          url: https://github.com/redhat-pe-workshop/global-techdocs.git
-      users:
-        - id: dev1
-        - id: dev2
-        - id: pe1
-        - id: pe2
   templates:
     - group: parasol
       project: parasol-insurance
       branch: main
       templates:
         - devfile.yaml
-    - group: global
-      project: global-techdocs
-      branch: main
-      templates:
-        - catalog-info.yaml
-        - mkdocs.yaml
     - group: rhdh
       project: rhdh-templates
       branch: main
