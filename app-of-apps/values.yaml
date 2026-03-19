@@ -207,6 +207,9 @@ devspaces:
   name: devspaces
   namespace: openshift-devspaces
 
+infraAppOfApps:
+  name: infra-app-of-apps
+
 amqStreams:
   enabled: true
   name: amq-streams
