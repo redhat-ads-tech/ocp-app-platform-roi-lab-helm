@@ -14,7 +14,7 @@ spec:
   project: {{ .Values.tenant.username }}
   source:
     path: build
-    repoURL: https://{{ .Values.gitlab.host }}/{{ .Values.tenant.username }}/parasol-insurance-secured-manifests.git
+    repoURL: https://{{ .Values.gitlab.host }}/{{ .Values.tenant.username }}/parasol-insurance-manifests.git
     targetRevision: main
     helm:
       valuesObject:

@@ -3,5 +3,5 @@
 {{- end -}}
 
 {{- define "parasol-insurance-tenant.prefix" -}}
-{{ .Values.tenant.username }}-parasol-insurance
+{{ .Values.tenant.username }}
 {{- end -}}

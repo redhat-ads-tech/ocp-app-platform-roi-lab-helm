@@ -31,17 +31,6 @@ vault:
   secrets:
     gitlab:
       rootPassword: ""
-    keycloak:
-      clientId: backstage
-      pluginClientId: backstage-plugin
-      clientSecret: ""
-      pluginClientSecret: ""
-      openshiftClientSecret: ""
-    rhdh:
-      argocdPassword: ""
-      postgresqlPassword: password
-    orchestrator:
-      token: ""
     common:
       password: ""
     litellm:
@@ -51,8 +40,6 @@ vault:
       adminPassword: ""
     kafka:
       userPassword: ""
-    tpa:
-      cliClientSecret: ""
 
 externalSecrets:
   name: external-secrets
@@ -60,10 +47,6 @@ externalSecrets:
 
 openshiftPipelines:
   name: openshift-pipelines
-  namespace: openshift-operators
-
-serviceMesh:
-  name: service-mesh
   namespace: openshift-operators
 
 noobaa:
@@ -83,39 +66,6 @@ gitlab:
   usersPassword: ""
   cluster:
     subdomain: ""
-  gitops:
-    namespace: ""
-  quay:
-    host: ""
-
-keycloak:
-  disabled: false
-  name: keycloak
-  namespace: keycloak
-  crName: keycloak
-  externalAccess: false
-  route:
-    host: ""
-  realm:
-    name: backstage
-  client:
-    backstage:
-      name: backstage
-      redirectUri: ""
-      webOrigin: ""
-      secret: ""
-    backstagePlugin:
-      name: backstage-plugin
-      secret: ""
-    openshift:
-      name: openshift
-      redirectUri: ""
-      secret: ""
-    tpaCli:
-      name: tpa-cli
-      secret: ""
-  users:
-    password: ""
 
 quay:
   name: quay
@@ -127,91 +77,6 @@ quay:
     - parasol
   users: []
 
-developerHub:
-  name: developer-hub
-  namespace: rhdh
-  config:
-    backstage:
-      host: ""
-    gitlab:
-      host: ""
-    argocd:
-      host: ""
-    kubernetes:
-      apiUrl: ""
-    keycloak:
-      host: ""
-      realm: backstage
-      loginRealm: backstage
-  application:
-    git:
-      host: "github.com"
-      group: redhat-ads-tech
-      repo: ocp-app-platform-demo-developer-hub-config
-      revision: main
-
-rhdhGitops:
-  name: rhdh-gitops
-  namespace: rhdh-gitops
-  password: ""
-
-rhdh:
-  name: backstage-bootstrap
-  namespace: backstage
-  configTemplate:
-    gitlab:
-      rootPassword: ""
-      host: ""
-    backstage:
-      host: ""
-    keycloak:
-      host: ""
-      realm: backstage
-      loginRealm: backstage
-      clientId: backstage-plugin
-      clientSecret: ""
-    gitops:
-      host: ""
-    kubernetes:
-      api: ""
-    cluster:
-      subdomain: ""
-  application:
-    gitops:
-      namespace: openshift-gitops
-    helm:
-      version: 1.8.2
-      values:
-        git:
-          host: ""
-
-tpa:
-  enabled: true
-  name: trusted-profile-analyzer
-  namespace: trusted-profile-analyzer
-  appDomain: ""
-  oidcIssuer: ""
-  postgresql:
-    user: trustify
-    database: trustify
-    password: trustify
-  s3:
-    region: ""
-
-rhtas:
-  name: trusted-artifact-signer
-  namespace: trusted-artifact-signer
-  instance: securesign
-  oidcIssuer: ""
-  rootCert:
-    email: admin@rhdemo.com
-    org: Parasol
-
-openshiftOAuth:
-  disabled: false
-  name: openshift-oauth
-  namespace: openshift-config
-
 kubernetesImagepuller:
   name: kubernetes-imagepuller
   namespace: openshift-operators
@@ -221,28 +86,10 @@ devspaces:
   name: devspaces
   namespace: openshift-devspaces
 
-infraAppOfApps:
-  name: infra-app-of-apps
-
 amqStreams:
   enabled: true
   name: amq-streams
   namespace: kafka
-
-acs:
-  enabled: true
-  name: acs
-  namespace: stackrox
-  clusterName: local-cluster
-  adminPassword: ""
-
-parasolRbac:
-  name: parasol-rbac
-  namespace: parasol-insurance-dev
-
-parasolInsurance:
-  name: parasol-insurance
-  namespace: parasol-insurance-dev
 
 openvsx:
   name: openvsx
@@ -251,14 +98,3 @@ openvsx:
 sonarqube:
   name: sonarqube
   namespace: sonarqube
-
-orchestrator:
-  name: orchestrator
-  namespace: backstage
-  backstage:
-    backend:
-      url: ""
-  openshift:
-    url: ""
-  gitlab:
-    url: ""

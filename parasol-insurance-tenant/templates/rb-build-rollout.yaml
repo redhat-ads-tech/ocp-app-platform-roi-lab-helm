@@ -14,9 +14,6 @@ roleRef:
   name: edit
 subjects:
   - kind: ServiceAccount
-    name: parasol-insurance-secured-build
-    namespace: {{ $prefix }}-build
-  - kind: ServiceAccount
     name: pipeline
     namespace: {{ $prefix }}-build
 {{- end }}

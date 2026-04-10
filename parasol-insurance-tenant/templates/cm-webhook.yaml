@@ -55,7 +55,7 @@ data:
           kubernetes.core.k8s_info:
             api_version: route.openshift.io/v1
             kind: Route
-            name: parasol-insurance-secured-listener
+            name: parasol-insurance-tag-listener
             namespace: '{{ "{{" }} build_namespace {{ "}}" }}'
           register: r_el_route
           retries: 60

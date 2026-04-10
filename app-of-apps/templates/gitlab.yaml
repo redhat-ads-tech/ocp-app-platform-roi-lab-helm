@@ -25,13 +25,11 @@ spec:
         - name: cluster.subdomain
           value: {{ .Values.gitlab.cluster.subdomain }}
         - name: gitops.namespace
-          value: {{ .Values.gitlab.gitops.namespace }}
+          value: {{ .Values.argocd.namespace }}
         - name: quay.host
-          value: {{ .Values.gitlab.quay.host }}
+          value: {{ .Values.quay.host }}
         - name: vault.name
           value: {{ .Values.vault.name }}
         - name: vault.namespace
           value: {{ .Values.vault.namespace }}
-        - name: orchestrator.namespace
-          value: {{ .Values.orchestrator.namespace }}
 {{ include "app-of-apps.syncPolicy" . | indent 2 }}
