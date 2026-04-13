@@ -26,5 +26,19 @@ spec:
           gitlab:
             host: {{ .Values.gitlab.host }}
           openVSXURL: https://open-vsx-server-{{ .Values.openvsx.namespace }}.{{ .Values.cluster.subdomain }}
-{{ include "app-of-apps.syncPolicy" . | indent 2 }}
+  syncPolicy:
+    automated:
+      prune: true
+      selfHeal: true
+    retry:
+      backoff:
+        duration: 5s
+        factor: 2
+        maxDuration: 2m0s
+      limit: 30
+    syncOptions:
+      - CreateNamespace=true
+      - RespectIgnoreDifferences=true
+      - SkipDryRunOnMissingResource=true
+      - ServerSideApply=true
 {{- end }}
