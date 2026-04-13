@@ -14,8 +14,6 @@ spec:
       valuesObject:
         subscription:
           source: {{ include "app-of-apps.operatorSource" . }}
-        rhtas:
-          namespace: {{ .Values.rhtas.namespace }}
   syncPolicy:
     automated: {}
     retry:
