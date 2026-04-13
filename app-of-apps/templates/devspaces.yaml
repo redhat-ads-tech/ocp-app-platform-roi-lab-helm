@@ -21,8 +21,7 @@ spec:
               startingCSV: ""
               {{- end }}
           webTerminal:
-            subscription:
-              source: {{ include "app-of-apps.operatorSource" . }}
+            enabled: false
         devspaces-instance:
           gitlab:
             host: {{ .Values.gitlab.host }}
