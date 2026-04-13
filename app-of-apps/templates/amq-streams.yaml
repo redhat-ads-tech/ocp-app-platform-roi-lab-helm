@@ -1,7 +1,7 @@
 {{- if .Values.amqStreams.enabled }}
 apiVersion: argoproj.io/v1alpha1
 kind: Application
-{{ include "app-of-apps.metadata" (dict "name" .Values.amqStreams.name "namespace" .Values.argocd.namespace "syncWave" "0") }}
+{{ include "app-of-apps.metadata" (dict "name" .Values.amqStreams.name "namespace" .Values.argocd.namespace "syncWave" "1") }}
 spec:
   destination:
     namespace: {{ .Values.amqStreams.namespace }}
