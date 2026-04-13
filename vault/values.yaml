@@ -10,17 +10,6 @@ vault:
 secrets:
   gitlab:
     rootPassword: ""
-  keycloak:
-    clientId: backstage
-    pluginClientId: backstage-plugin
-    clientSecret: ""
-    pluginClientSecret: ""
-    openshiftClientSecret: ""
-  rhdh:
-    argocdPassword: ""
-    postgresqlPassword: ""
-  orchestrator:
-    token: ""
   common:
     password: ""
   litellm:
@@ -28,5 +17,5 @@ secrets:
     apiKey: ""
   kafka:
     userPassword: ""
-  tpa:
-    cliClientSecret: ""
+  sonarqube:
+    adminPassword: ""
