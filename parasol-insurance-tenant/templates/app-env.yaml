@@ -23,6 +23,7 @@ spec:
       valueFiles:
         - values/values-{{ $env }}.yaml
       valuesObject:
+        namespace: {{ $prefix }}-{{ $env }}
         registry:
           host: {{ $.Values.registry.host }}
         cluster:
