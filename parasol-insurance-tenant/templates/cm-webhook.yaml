@@ -19,7 +19,7 @@ data:
             name: {{ $.Values.vault.name }}-0
             namespace: {{ $.Values.vault.namespace }}
           register: r_vault
-          retries: 120
+          retries: 20
           delay: 5
           until:
             - r_vault.resources is defined
