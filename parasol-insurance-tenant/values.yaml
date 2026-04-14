@@ -35,4 +35,4 @@ database:
 
 kafka:
   namespace: kafka
-  clusterName: my-cluster
+  clusterName: kafka
