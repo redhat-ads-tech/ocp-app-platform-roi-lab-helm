@@ -70,9 +70,8 @@ gitlab:
         - name: parasol-insurance
           url: https://github.com/redhat-ads-tech/parasol-insurance.git
         - name: parasol-insurance-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-manifests.git
-        - name: parasol-insurance-secured-manifests
-          url: https://github.com/redhat-ads-tech/parasol-insurance-secured-manifests.git
+          url: https://github.com/evanshortiss/ocp-app-platform-roi-lab-parasol-manifests.git
+
       users:
         - id: dev1
         - id: dev2
