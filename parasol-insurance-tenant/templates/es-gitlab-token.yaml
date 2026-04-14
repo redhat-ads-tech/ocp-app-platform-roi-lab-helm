@@ -8,7 +8,7 @@ spec:
   refreshInterval: 5m
   secretStoreRef:
     kind: ClusterSecretStore
-    name: vault
+    name: vault-secret-store
   data:
     - secretKey: token
       remoteRef:
