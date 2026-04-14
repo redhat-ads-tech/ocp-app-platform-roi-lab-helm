@@ -32,6 +32,5 @@ spec:
       prune: true
       selfHeal: true
     syncOptions:
-      - CreateNamespace=true
       - RespectIgnoreDifferences=true
 {{- end }}
