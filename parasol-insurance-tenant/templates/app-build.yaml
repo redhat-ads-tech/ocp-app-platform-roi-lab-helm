@@ -19,6 +19,9 @@ spec:
     helm:
       valuesObject:
         namespace: {{ include "parasol-insurance-tenant.prefix" . }}-build
+        devNamespace: {{ include "parasol-insurance-tenant.prefix" . }}-dev
+        tenant:
+          username: {{ .Values.tenant.username }}
         gitlab:
           host: {{ .Values.gitlab.host }}
         registry:
