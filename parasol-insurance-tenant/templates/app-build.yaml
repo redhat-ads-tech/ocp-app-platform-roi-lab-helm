@@ -5,8 +5,10 @@ metadata:
   namespace: {{ .Values.argocd.namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "0"
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  # No finalizer — the parent app deletes the namespace which cleans up
+  # all resources. Using a finalizer here would block deletion because
+  # the PreDelete hook deletes the GitLab user (and source repo) before
+  # ArgoCD can reconcile the child app's desired state.
 spec:
   destination:
     namespace: {{ include "parasol-insurance-tenant.prefix" . }}-build

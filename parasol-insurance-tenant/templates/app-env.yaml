@@ -8,8 +8,7 @@ metadata:
   namespace: {{ $.Values.argocd.namespace }}
   annotations:
     argocd.argoproj.io/sync-wave: "0"
-  finalizers:
-    - resources-finalizer.argocd.argoproj.io
+  # No finalizer — see comment in app-build.yaml
 spec:
   destination:
     namespace: {{ $prefix }}-{{ $env }}
