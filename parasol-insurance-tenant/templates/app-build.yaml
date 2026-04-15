@@ -11,7 +11,7 @@ spec:
   destination:
     namespace: {{ include "parasol-insurance-tenant.prefix" . }}-build
     server: https://kubernetes.default.svc
-  project: {{ .Values.tenant.username }}
+  project: {{ include "parasol-insurance-tenant.argocd-project" . }}
   source:
     path: build
     repoURL: https://{{ .Values.gitlab.host }}/{{ .Values.tenant.username }}/parasol-insurance-manifests.git
