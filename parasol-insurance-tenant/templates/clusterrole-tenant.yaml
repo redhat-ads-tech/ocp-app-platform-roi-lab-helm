@@ -8,7 +8,7 @@ rules:
   # Secrets: list/watch only, no get (can't view contents)
   - apiGroups: [""]
     resources: ["secrets"]
-    verbs: ["watch"]
+    verbs: ["list", "watch"]
   # Core resources
   - apiGroups: [""]
     resources: ["configmaps", "endpoints", "persistentvolumeclaims", "pods", "pods/log", "pods/attach", "pods/exec", "pods/portforward", "replicationcontrollers", "services", "services/proxy", "serviceaccounts"]
